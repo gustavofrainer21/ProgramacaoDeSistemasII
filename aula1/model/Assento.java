@@ -4,20 +4,17 @@ public abstract class Assento {
     private String classe;
     private double precoBase;
 
-    //construtor
     public Assento(String classe, double precoBase) {
         this.classe = classe;
         this.precoBase = precoBase;
     }
 
-    //getters e setters
     public String getClasse() {
         return classe;
     }
     public void setClasse(String classe) {
         this.classe = classe;
     }
-
     public double getPrecoBase() {
         return precoBase;
     }
@@ -26,6 +23,6 @@ public abstract class Assento {
     }
 
     public abstract double calcularPrecoFinal() {
-        
+        return precoBase;
     }
 }
