@@ -14,7 +14,7 @@ public class Passageiro {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getAssento() {
+    public Assento getAssento() {
         return assento;
     }
     public void setAssento(Assento assento) {
