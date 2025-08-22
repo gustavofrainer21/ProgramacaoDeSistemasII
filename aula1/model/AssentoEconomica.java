@@ -6,7 +6,7 @@ public class AssentoEconomica extends Assento {
     }
 
     @Override
-    public abstract double calcularPrecoFinal() {
+    public double calcularPrecoFinal() {
         return this.getPrecoBase();
     }
 }

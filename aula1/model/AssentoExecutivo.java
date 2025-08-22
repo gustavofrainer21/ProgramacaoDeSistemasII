@@ -8,7 +8,7 @@ public class AssentoExecutivo extends Assento {
     }
 
     @Override
-    public abstract double calculaPrecoFinal(); {
+    public double calculaPrecoFinal() {
         return this.getPrecoBase + (this.getPrecoBase * this.acrecimo);
     }
 }
