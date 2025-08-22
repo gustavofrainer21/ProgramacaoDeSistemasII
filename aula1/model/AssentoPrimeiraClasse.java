@@ -9,6 +9,6 @@ public class AssentoPrimeiraClasse extends Assento {
 
     @Override
     public double calcularPrecoFinal() {
-        return this.getPrecoBase + (this.getPrecoBase * this.acrecimo);
+        return this.getPrecoBase() + (this.getPrecoBase() * this.acrecimo);
     }
 }

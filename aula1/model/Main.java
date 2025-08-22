@@ -9,7 +9,7 @@ public class Main {
         Assento a1 = new AssentoEconomica("Economica", 50.0);
         System.out.println("Valor do Assento: " + a1.calcularPrecoFinal());
 
-        Assento a2 = new AssentoExecutiva("Executiva", 150.0);
+        Assento a2 = new AssentoExecutivo("Executiva", 150.0);
         System.out.println("Valor do Assento: " + a2.calcularPrecoFinal());
 
         Passageiro p1 = new Passageiro("Gustavo");
