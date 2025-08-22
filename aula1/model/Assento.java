@@ -22,7 +22,5 @@ public abstract class Assento {
         this.precoBase = precoBase;
     }
 
-    public abstract double calcularPrecoFinal() {
-        return precoBase;
-    }
+    public abstract double calcularPrecoFinal();
 }

@@ -14,4 +14,10 @@ public class Passageiro {
     public void setNome(String nome) {
         this.nome = nome;
     }
+    public String getAssento() {
+        return assento;
+    }
+    public void setAssento(Assento assento) {
+        this.assento = assento;
+    }
 }
