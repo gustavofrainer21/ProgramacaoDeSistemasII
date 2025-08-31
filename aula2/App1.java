@@ -8,5 +8,6 @@ public class App1 {
         g = new GerenciadorNomesArquivo();
         g.adicionarNome("Marcelo");
         g.adicionarNome("Silvia");
+        System.out.println(g.obterNomes());
     }
 }

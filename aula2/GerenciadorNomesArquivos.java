@@ -1,24 +1,34 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GerenciadorNomesArquivo implements GerenciadorNomes{
     String arq = "arq.txt";
 
-    BufferedWriter br = null;
-
+    @Override
     public void adicionarNome(String nome){
-        try{
-            br = new BufferedWriter(new FileWriter(arq));
-        
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(arq, true))) {    
             br.write(nome);
-            br.flush();
-        }catch(IOException ioex){
+            br.newLine();
+        } catch(IOException ioex){
             ioex.printStackTrace();
         }
     }
 
-    public List<String> obterNomes(){
-        return null;
+    @Override
+    public List<String> obterNomes() {
+        List<String> nomes = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(arq))) {
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                nomes.add(linha);
+            }
+        } catch (FileNotFoundException e) {
+
+        } catch (IOException ioex) {
+            ioex.printStackTrace();
+        }
+        return nomes;
     }
 
 }
