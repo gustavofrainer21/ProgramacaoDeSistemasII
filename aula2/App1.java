@@ -4,5 +4,9 @@ public class App1 {
         g.adicionarNome("Marcelo");
         g.adicionarNome("Silvia");
         System.out.println(g.obterNomes());
+
+        g = new GerenciadorNomesArquivo();
+        g.adicionarNome("Marcelo");
+        g.adicionarNome("Silvia");
     }
 }
