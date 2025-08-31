@@ -8,8 +8,8 @@ public class GerenciadorNomesArquivo implements GerenciadorNomes{
     @Override
     public void adicionarNome(String nome){
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(arq, true))) {    
-            br.write(nome);
-            br.newLine();
+            bw.write(nome);
+            bw.newLine();
         } catch(IOException ioex){
             ioex.printStackTrace();
         }
