@@ -4,5 +4,6 @@ public class CriterioPrecoMaximo implements CriterioBusca {
         if (p.getPreco() <= valorDouble) {
             return true;
         }
+        return false;
     }
 }
