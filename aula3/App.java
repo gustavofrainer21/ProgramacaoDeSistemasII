@@ -27,6 +27,7 @@ public class App {
             System.out.println("(2) - Pesquisar descrição");
             System.out.println("(3) - Pesquisar marca");
             System.out.println("(4) - Pesquisar pelo preço máximo");
+            System.out.println("(5) - Pesquisar pelo preço mínimo");
             System.out.println("(0) - Sair");
         
             System.out.print("Escolha uma opção: ");
@@ -64,10 +65,20 @@ public class App {
 
                 case "4":
                     System.out.print("Digite o preço pelo qual deseja pesquisar: ");
-                    String preco = sc.nextLine();
+                    String precoMax = sc.nextLine();
                     System.out.println("\nResultado da pesquisa:");
-                    List<Produto> resultado3 = pesquisar(produtos, preco, new CriterioPrecoMaximo());
+                    List<Produto> resultado3 = pesquisar(produtos, precoMax, new CriterioPrecoMaximo());
                     for (Produto p : resultado3) {
+                        System.out.println(p);
+                    }
+                    break;
+
+                case "5":
+                    System.out.print("Digite o preço pelo qual deseja pesquisar: ");
+                    String precoMin = sc.nextLine();
+                    System.out.println("\nResultado da pesquisa:");
+                    List<Produto> resultado4 = pesquisar(produtos, precoMin, new CriterioPrecoMaximo());
+                    for (Produto p : resultado4) {
                         System.out.println(p);
                     }
                     break;
