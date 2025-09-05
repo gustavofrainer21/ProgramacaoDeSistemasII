@@ -1,1 +1,3 @@
-Computador Apple
+Computador
+Monitor
+Mouse

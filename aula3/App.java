@@ -26,6 +26,7 @@ public class App {
             System.out.println("\n(1) - Listar produtos");
             System.out.println("(2) - Pesquisar descrição");
             System.out.println("(3) - Pesquisar marca");
+            System.out.println("(4) - Pesquisar pelo preço máximo");
             System.out.println("(0) - Sair");
         
             System.out.print("Escolha uma opção: ");
@@ -60,6 +61,17 @@ public class App {
                         System.out.println(p);
                     } 
                     break;
+
+                case "4":
+                    System.out.print("Digite o preço pelo qual deseja pesquisar: ");
+                    Double preco = sc.nextLine();
+                    System.out.println("\nResultado da pesquisa:");
+                    List<Produto> resultado3 = pesquisar(produtos, valor, new CriterioPrecoMaximo());
+                    for (Produto p : resultado3) {
+                        System.out.println(p);
+                    }
+                    break;
+
                 default:
                     System.out.println("Opção inválida");
                     break;
