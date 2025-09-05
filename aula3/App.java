@@ -77,7 +77,7 @@ public class App {
                     System.out.print("Digite o preço pelo qual deseja pesquisar: ");
                     String precoMin = sc.nextLine();
                     System.out.println("\nResultado da pesquisa:");
-                    List<Produto> resultado4 = pesquisar(produtos, precoMin, new CriterioPrecoMaximo());
+                    List<Produto> resultado4 = pesquisar(produtos, precoMin, new CriterioPrecoMinimo());
                     for (Produto p : resultado4) {
                         System.out.println(p);
                     }

@@ -1,4 +1,4 @@
-public class CriterioPrecoMinimo {
+public class CriterioPrecoMinimo implements CriterioBusca {
     public boolean testar(Produto p, String valor) {
         double valorDouble = Double.parseDouble(valor);
         if (p.getPreco() >= valorDouble) {
