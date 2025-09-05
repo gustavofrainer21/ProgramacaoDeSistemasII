@@ -64,9 +64,9 @@ public class App {
 
                 case "4":
                     System.out.print("Digite o preço pelo qual deseja pesquisar: ");
-                    Double preco = sc.nextLine();
+                    String preco = sc.nextLine();
                     System.out.println("\nResultado da pesquisa:");
-                    List<Produto> resultado3 = pesquisar(produtos, valor, new CriterioPrecoMaximo());
+                    List<Produto> resultado3 = pesquisar(produtos, preco, new CriterioPrecoMaximo());
                     for (Produto p : resultado3) {
                         System.out.println(p);
                     }
