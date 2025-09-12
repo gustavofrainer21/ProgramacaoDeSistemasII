@@ -7,17 +7,14 @@ import java.sql.Statement;
 public class App {
     public static void main(String[] args) throws Exception {
         try {
-            // Carregar o driver JDBC
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://aws-1-sa-east-1.pooler.supabase.com:6543/postgres?user=postgres.lwosfmqolvzgrlehqzel&password=4TIwllyFfp439Yrg";
 
-            // Estabelecendo conexão
             Connection con = DriverManager.getConnection(url);
 
-            // Statement para execução de queries simples
             Statement stmt = con.createStatement();
 
-            // 1. Listando os registros existentes
+            //Listando os registros existentes
             System.out.println("Listando registros existentes:");
             ResultSet rs = stmt.executeQuery("SELECT * FROM HOSPEDE");
             while (rs.next()) {
@@ -27,7 +24,7 @@ public class App {
                 System.out.println("----");
             }
 
-            // 2. Inserindo um novo registro
+            //Inserindo um novo registro
             System.out.println("\nInserindo novo registro:");
             String sql_insert = "INSERT INTO HOSPEDE (NOME, TELEFONE) VALUES(?, ?)";
             PreparedStatement pstmt = con.prepareStatement(sql_insert);
@@ -38,7 +35,7 @@ public class App {
                 System.out.println("Registro inserido com sucesso!");
             }
 
-            // 3. Atualizando um registro existente
+            //Atualizando um registro existente
             System.out.println("\nAtualizando um registro existente:");
             String sql_update = "UPDATE HOSPEDE SET TELEFONE = ? WHERE NOME = ?";
             PreparedStatement pstmtUpdate = con.prepareStatement(sql_update);
@@ -49,7 +46,7 @@ public class App {
                 System.out.println("Registro atualizado com sucesso!");
             }
 
-            // 4. Removendo um registro
+            //Removendo um registro
             System.out.println("\nRemovendo um registro:");
             String sql_delete = "DELETE FROM HOSPEDE WHERE NOME = ?";
             PreparedStatement pstmtDelete = con.prepareStatement(sql_delete);
@@ -59,7 +56,6 @@ public class App {
                 System.out.println("Registro removido com sucesso!");
             }
 
-            // Fechando a conexão
             con.close();
         } catch (Exception ex) {
             ex.printStackTrace();
