@@ -57,11 +57,11 @@ public class DAOHospede extends DAO {
 
     public void remove(Hospede h) {
         try {
-            String sql_delete = "DELETE FROM HOSPEDE WHERE NOME = ?";
+            String sql_delete = "DELETE FROM HOSPEDE WHERE ID = ?";
 
             PreparedStatement pstmt = super.connect().prepareStatement(sql_delete);
 
-            pstmt.setString(1, h.getNome());
+            pstmt.setLong(1, h.getId());
 
             int qte = pstmt.executeUpdate();
             if(qte >= 1)

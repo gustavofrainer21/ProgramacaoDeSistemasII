@@ -27,7 +27,13 @@ public class App {
             System.out.print(hospede.getNome() + " - ");
             System.out.println(hospede.getTelefone());
        }
+       System.out.println();
 
-       //daoHosp.remove(h);
+       daoHosp.remove(h);
+       list = daoHosp.listAllHospedes();
+       for (Hospede hospede : list) {
+            System.out.print(hospede.getNome() + " - ");
+            System.out.println(hospede.getTelefone());
+       }
     }
 }
