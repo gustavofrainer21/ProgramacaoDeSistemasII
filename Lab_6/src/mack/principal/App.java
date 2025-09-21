@@ -19,8 +19,15 @@ public class App {
             System.out.print(hospede.getNome() + " - ");
             System.out.println(hospede.getTelefone());
        }
+       System.out.println();
 
        daoHosp.update(h, "Ricardo", "(11) 96123-7126");
+       list = daoHosp.listAllHospedes();
+       for (Hospede hospede : list) {
+            System.out.print(hospede.getNome() + " - ");
+            System.out.println(hospede.getTelefone());
+       }
+
        //daoHosp.remove(h);
     }
 }

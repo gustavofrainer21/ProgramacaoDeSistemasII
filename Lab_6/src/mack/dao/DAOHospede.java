@@ -37,15 +37,20 @@ public class DAOHospede extends DAO {
         //inserindo
             String sql_insert = "INSERT INTO HOSPEDE (NOME, TELEFONE) VALUES(?,?)";
 
-            PreparedStatement pstmt = super.connect().prepareStatement(sql_insert);
+            PreparedStatement pstmt = super.connect().prepareStatement(sql_insert, Statement.RETURN_GENERATED_KEYS);
 
             pstmt.setString(1, h.getNome());
             pstmt.setString(2, h.getTelefone());
 
             int qte = pstmt.executeUpdate();
-            if(qte >= 1)
+            if(qte >= 1) {
                 System.out.println("Inserido com sucesso");
-         } catch (Exception e) {
+                ResultSet rs = pstmt.getGeneratedKeys();
+                if (rs.next()) {
+                    h.setId(rs.getLong(1));
+                }
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
