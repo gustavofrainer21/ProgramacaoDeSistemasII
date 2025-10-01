@@ -1,4 +1,4 @@
-package main.java.br.mack.ps2.hotelapp.model;
+package br.mack.ps2.hotelapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

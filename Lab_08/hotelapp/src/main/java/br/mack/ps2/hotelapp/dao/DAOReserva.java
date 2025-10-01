@@ -1,4 +1,4 @@
-package main.java.br.mack.ps2.hotelapp.dao;
+package br.mack.ps2.hotelapp.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
