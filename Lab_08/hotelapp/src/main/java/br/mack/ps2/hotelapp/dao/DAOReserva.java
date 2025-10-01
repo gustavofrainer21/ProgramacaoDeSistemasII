@@ -6,7 +6,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import mack.ps2.hotelapp.model.Reserva;
+import br.mack.ps2.hotelapp.model.Reserva;
+//import mack.ps2.hotelapp.model.Reserva;
 
 public class DAOReserva extends DAO {
 
