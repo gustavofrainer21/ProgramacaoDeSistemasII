@@ -1,6 +1,12 @@
 package br.mack.ps2.hotelapp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class Reserva {
+    @Id @GeneratedValue
     private Long id;
     private int hospede_id;
     private String data_checkin;
