@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.mack.ps2.hotelapp.model.Reserva;
-//import mack.ps2.hotelapp.model.Reserva;
 
 public class DAOReserva extends DAO {
 

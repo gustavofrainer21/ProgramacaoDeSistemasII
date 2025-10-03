@@ -3,7 +3,7 @@ package br.mack.ps2.hotelapp.dao;
 //import org.springframework.data.repository.CrudRepository;
 
 /*public interface DAOHospede extends CrudRepository<Hospede, Long> {
-    
+    public List<Hospede> findByNome(String nome);
 } */
 
 import java.sql.PreparedStatement;
