@@ -27,19 +27,20 @@ public class HotelappApplication implements org.springframework.boot.CommandLine
 	public void listar() {
 		Iterable<Hospede> hospedes = hospDAO.findAll();
 		Iterable<Reserva> reservas = resDAO.findAll();
-		System.out.println("Hóspedes:");
+		System.out.println("\nHóspedes:\n");
 		for(Hospede h : hospedes) {
 			System.out.println("ID: " + h.getId());
 			System.out.println("Nome: " + h.getNome());
 			System.out.println("Telefone: " + h.getTelefone());
-			System.out.println("-----------------------\n");
+			System.out.println();
 		}
-		System.out.println("Reservas:");
+		System.out.println("--------------------------------------------------");
+		System.out.println("\nReservas:\n");
 		for(Reserva r : reservas) {
 			System.out.println("ID: " + r.getId());
 			System.out.println("ID do Hóspede: " + r.getHospede_id());
 			System.out.println("Data de Check-in: " + r.getData_checkin());
-			System.out.println("-----------------------\n");
+			System.out.println();
 		}
 	}
 
@@ -48,25 +49,27 @@ public class HotelappApplication implements org.springframework.boot.CommandLine
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Digite o nome do hóspede: ");
 		String nome = sc.nextLine();
+		System.out.println();
 		List<Hospede> hospedes = hospDAO.findByNome(nome);
 		for(Hospede h : hospedes) {
 			System.out.println("ID: " + h.getId());
 			System.out.println("Nome: " + h.getNome());
 			System.out.println("Telefone: " + h.getTelefone());
-			System.out.println("-----------------------\n");
+			System.out.println();
 		}
 	}
 	public void buscarReserva() {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Digite o ID do hóspede: ");
 		int hospede_id = sc.nextInt();
+		System.out.println();
 		/*List<Reserva> reservas = resDAO.findByHospede_id(hospede_id);
 		for(Reserva r : reservas) {
 			System.out.println("ID: " + r.getId());
 			System.out.println("ID do Hóspede: " + r.getHospede_id());
 			System.out.println("Data de Check-in: " + r.getData_checkin());
 			System.out.println("-----------------------\n");
-		}*/
+		} */
 	}
 
 	// Método Criar
@@ -87,7 +90,7 @@ public class HotelappApplication implements org.springframework.boot.CommandLine
 		System.out.print("Digite o ID do hóspede: ");
 		int hospede_id = sc.nextInt();
 		sc.nextLine(); // Consumir a quebra de linha
-		System.out.print("Digite a data de check-in (formato YYYY-MM-DD): ");
+		System.out.print("Digite a data de check-in: ");
 		String data_checkin = sc.nextLine();
 		Reserva r = new Reserva();
 		r.setHospede_id(hospede_id);
