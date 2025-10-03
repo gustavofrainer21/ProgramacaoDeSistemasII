@@ -12,10 +12,11 @@ import br.mack.ps2.hotelapp.model.Reserva;
 import br.mack.ps2.hotelapp.dao.DAOReserva;
 
 @SpringBootApplication
-public class HotelappApplication {
+public class HotelappApplication implements org.springframework.boot.CommandLineRunner {
 
 	@Autowired
 	private DAOHospede hospDAO;
+	@Autowired
 	private DAOReserva resDAO;
 
 	public static void main(String[] args) {
@@ -59,13 +60,13 @@ public class HotelappApplication {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Digite o ID do hóspede: ");
 		int hospede_id = sc.nextInt();
-		List<Reserva> reservas = resDAO.findByHospede_id(hospede_id);
+		/*List<Reserva> reservas = resDAO.findByHospede_id(hospede_id);
 		for(Reserva r : reservas) {
 			System.out.println("ID: " + r.getId());
 			System.out.println("ID do Hóspede: " + r.getHospede_id());
 			System.out.println("Data de Check-in: " + r.getData_checkin());
 			System.out.println("-----------------------\n");
-		}
+		}*/
 	}
 
 	// Método Criar
