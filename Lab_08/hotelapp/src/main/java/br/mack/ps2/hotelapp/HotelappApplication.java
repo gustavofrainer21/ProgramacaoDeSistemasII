@@ -1,7 +1,11 @@
 package br.mack.ps2.hotelapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import br.mack.ps2.hotelapp.model.Hospede;
+import br.mack.ps2.hotelapp.dao.DAOHospede;
 
 @SpringBootApplication
 public class HotelappApplication {
