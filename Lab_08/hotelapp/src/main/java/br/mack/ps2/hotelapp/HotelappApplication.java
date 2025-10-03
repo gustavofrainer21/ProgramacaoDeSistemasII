@@ -13,7 +13,7 @@ import br.mack.ps2.hotelapp.dao.DAOHospede;
 public class HotelappApplication {
 
 	@Autowired
-	private DAOHospede hospDAO;
+	private DAOHospede h;
 
 	public static void main(String[] args) {
 		SpringApplication.run(HotelappApplication.class, args);
